@@ -3,10 +3,13 @@ com\ta\Goride\Controller\PassangerController.class
 com\ta\Goride\dao\DriverDao.class
 com\ta\Goride\dto\Transaction.class
 com\ta\Goride\services\PassangerServices.class
+com\ta\Goride\services\RideService.class
+com\ta\Goride\Controller\RideController.class
 com\ta\Goride\dao\PassangerDao.class
 com\ta\Goride\dao\Transactiondao.class
 com\ta\Goride\dto\Driver.class
 com\ta\Goride\dto\Passanger.class
 com\ta\Goride\Controller\DriverController.class
 com\ta\Goride\log\log4jexamples\BasicConfig.class
+com\ta\Goride\services\DriverServices.class
 com\ta\Goride\util\DatabaseConnection.class

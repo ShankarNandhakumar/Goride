@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ta.Goride.dto.Driver;
 import com.ta.Goride.dto.Passanger;
 import com.ta.Goride.util.DatabaseConnection;
 
@@ -103,4 +104,21 @@ public class PassangerDao {
         }
         return passangers;
     }
+
+    
+    public boolean bookRide(int passangerid,String otp){
+    	
+		return false;
+    	
+    }
+    
+    
+	public boolean validateOTP(int passengerId, String otp){
+		
+		return false;
+	}
+
+	
+
+	
 }

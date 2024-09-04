@@ -12,6 +12,7 @@ import com.ta.Goride.util.DatabaseConnection;
 
 public class DriverDao {
 
+	
     // Add a new driver to the database
     public void addDriver(Driver driver) {
         String sql = "INSERT INTO drivers (driverid, drivername, licenseno, vehicletype, available) VALUES (?, ?, ?, ?,?)";
@@ -54,7 +55,7 @@ public class DriverDao {
         return null; // Return null if the driver is not found
     }
 
-    // Update an existing driver's information
+    // Update an existing drivers informations
     public void updateDriver(Driver driver) {
         String sql = "UPDATE drivers SET   driverid=?  drivername = ?, licenseno ?, vehicletype = ?, available = ? WHERE driverid = ?";
         try (Connection conn = DatabaseConnection.getConnection();
@@ -66,7 +67,7 @@ public class DriverDao {
             stmt.setString(4, driver.getVehicletype());
             stmt.setBoolean(5, driver.isAvailable());
 
-            stmt.executeUpdate();
+            stmt.executeUpdate(); 
         } catch (SQLException e) {
             e.printStackTrace(); // Handle exceptions appropriately
         }

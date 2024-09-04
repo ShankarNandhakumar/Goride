@@ -6,17 +6,32 @@ public class Transaction {
 
 	private	int transactionId;
 		private int driverid;
+		public Passanger getPassanger() {
+			return passanger;
+		}
+		public void setPassanger(Passanger passanger) {
+			this.passanger = passanger;
+		}
+		public Driver getDriver() {
+			return driver;
+		}
+		public void setDriver(Driver driver) {
+			this.driver = driver;
+		}
+
 		private int passangerid;
 		private String transactionType;
 		private double transactionAmount;
+		
+		private Passanger passanger;
+		private Driver driver;
+		
 		public Timestamp getTransactionDate() {
 			return transactionDate;
 		}
-		public void setTransactionDate(Timestamp transactionDate) {
+		public void setTransactionDate( Timestamp transactionDate) {
 			this.transactionDate = transactionDate;
 		}
-
-
 
 		private Timestamp transactionDate;
 		private String pickuppoint;
@@ -68,10 +83,12 @@ public class Transaction {
 		public String toString() {
 			return "Transaction [transactionId=" + transactionId + ", driverid=" + driverid + ", passangerid="
 					+ passangerid + ", transactionType=" + transactionType + ", transactionAmount=" + transactionAmount
-					+ ", transactionDate=" + transactionDate + ", pickuppoint=" + pickuppoint + ", droppoint="
-					+ droppoint + "]";
+					+ ", passanger=" + passanger + ", driver=" + driver + ", transactionDate=" + transactionDate
+					+ ", pickuppoint=" + pickuppoint + ", droppoint=" + droppoint + "]";
 		}
 	
 		
+	}
+		
+		
 	
-}
