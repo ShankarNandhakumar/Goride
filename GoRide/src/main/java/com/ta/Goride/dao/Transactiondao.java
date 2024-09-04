@@ -14,16 +14,16 @@ public class Transactiondao {
 
     // Add a new transaction to the database
     public void addTransaction(Transaction transaction) {
-        String sql = "INSERT INTO transactions (passanger_id, driver_id, amount, transaction_date) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO transactions (transactionId,passangerId, driverid, transactionAmount,transactionType,pickuppoint,droppoint,transactionDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-        	stmt.setInt(3, transaction.getTransactionId());
-            stmt.setInt(1, transaction.getPassangerid());
-            stmt.setInt(2, transaction.getDriverid());
+        	stmt.setInt(1, transaction.getTransactionId());
+            stmt.setInt(2, transaction.getPassangerid());
+            stmt.setInt(3, transaction.getDriverid());
             stmt.setDouble(4, transaction.getTransactionAmount());
             stmt.setString(5, transaction.getTransactionType());
-            stmt.setString(7, transaction.getPickuppoint());
+            stmt.setString(6, transaction.getPickuppoint());
             stmt.setString(7,transaction.getDroppoint());
             stmt.setTimestamp(8, transaction.getTransactionDate());
             
@@ -46,12 +46,12 @@ public class Transactiondao {
             if (rs.next()) {
                 Transaction transaction = new Transaction();
                 
-                stmt.setInt(3, transaction.getTransactionId());
-                stmt.setInt(1, transaction.getPassangerid());
-                stmt.setInt(2, transaction.getDriverid());
+                stmt.setInt(1, transaction.getTransactionId());
+                stmt.setInt(2, transaction.getPassangerid());
+                stmt.setInt(3, transaction.getDriverid());
                 stmt.setDouble(4, transaction.getTransactionAmount());
                 stmt.setString(5, transaction.getTransactionType());
-                stmt.setString(7, transaction.getPickuppoint());
+                stmt.setString(6, transaction.getPickuppoint());
                 stmt.setString(7,transaction.getDroppoint());
                 stmt.setTimestamp(8, transaction.getTransactionDate());
                 
@@ -77,12 +77,12 @@ public class Transactiondao {
                 Transaction transaction = new Transaction();
                
                 
-                stmt.setInt(3, transaction.getTransactionId());
-                stmt.setInt(1, transaction.getPassangerid());
-                stmt.setInt(2, transaction.getDriverid());
+                stmt.setInt(1, transaction.getTransactionId());
+                stmt.setInt(2, transaction.getPassangerid());
+                stmt.setInt(3, transaction.getDriverid());
                 stmt.setDouble(4, transaction.getTransactionAmount());
                 stmt.setString(5, transaction.getTransactionType());
-                stmt.setString(7, transaction.getPickuppoint());
+                stmt.setString(6, transaction.getPickuppoint());
                 stmt.setString(7,transaction.getDroppoint());
                 stmt.setTimestamp(8, transaction.getTransactionDate());
                 transactions.add(transaction);
@@ -106,12 +106,12 @@ public class Transactiondao {
             while (rs.next()) {
                 Transaction transaction = new Transaction();
                 
-                stmt.setInt(3, transaction.getTransactionId());
-                stmt.setInt(1, transaction.getPassangerid());
-                stmt.setInt(2, transaction.getDriverid());
+                stmt.setInt(1, transaction.getTransactionId());
+                stmt.setInt(2, transaction.getPassangerid());
+                stmt.setInt(3, transaction.getDriverid());
                 stmt.setDouble(4, transaction.getTransactionAmount());
                 stmt.setString(5, transaction.getTransactionType());
-                stmt.setString(7, transaction.getPickuppoint());
+                stmt.setString(6, transaction.getPickuppoint());
                 stmt.setString(7,transaction.getDroppoint());
                 stmt.setTimestamp(8, transaction.getTransactionDate());
                 transactions.add(transaction);
@@ -121,4 +121,6 @@ public class Transactiondao {
         }
         return transactions;
     }
+
+	
 }
